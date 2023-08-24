@@ -1,0 +1,28 @@
+.data{
+    padding: 20px;
+    backdrop-filter: blur(40px);
+}
+.data p{
+    font-size:18px ;
+}
+.data button{
+    margin: 20px;
+    padding: 5px 8px;
+    border : 1.25px solid;
+    background: rgba(158, 147, 147, 0.671);
+}
+.data input{
+    font-weight: 500;
+    width: 80%;
+    margin-left: 10%;
+    min-height: 2.7em;
+    padding : 0 20px;
+    background: transparent;
+}
+.data .btn{
+    margin-left: 10%;
+    width: 30%;
+}
+.data .btn:hover{
+    background:#f9a8b5;
+}

@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import styles from "./Search.module.css";
 import Card from "../components/Card";
-const addNotification = () => toast.success("No Student Found ⬆" ,{
-  position: "top-right",
-autoClose: 2000});
-
+const addNotification = () =>
+  toast.success("No Student Found ⬆", {
+    position: "top-right",
+    autoClose: 2000,
+  });
 
 const Search = () => {
   const [id, setId] = useState("");
@@ -20,7 +22,7 @@ const Search = () => {
       });
       if (!res.data) {
         // alert("No student found");
-        addNotification()
+        addNotification();
       } else {
         console.log(res.data);
         setStudentDetails(res.data);
@@ -33,14 +35,14 @@ const Search = () => {
   };
 
   return (
-    <div style={{ display: "flex" }}>
-      <div>
-      <ToastContainer className='notification' />
-        <h2>Search for Student..</h2>
+    <div className={styles.body}>
+      <ToastContainer className="notification" />
+      <h2>Search for Student</h2>
+      <div className={styles["input-button"]}>
         <input type="text" onChange={(e) => setId(e.target.value)} value={id} />
-        <button onClick={handleClick}>Find</button>
-        {log && <Card data={studentDetails} />}
+        <button className={styles['find']} onClick={handleClick}>Find</button>
       </div>
+      {log && <Card data={studentDetails} />}
     </div>
   );
   // return (

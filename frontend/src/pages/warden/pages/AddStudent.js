@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
-
+import styles from "./AddStudent.module.css";
 const addNotification = () =>
   toast.success("Student Added ⬆", {
     position: "top-right",
@@ -57,9 +57,9 @@ const AddStudent = () => {
   };
   return (
     <>
-      <h1>ADD STUDENT</h1>
       <ToastContainer className="notification" />
-      <form>
+      <form className={styles.form}>
+        <h1>Add Student</h1>
         <input
           type="text"
           className="enroll_id"
@@ -132,7 +132,7 @@ const AddStudent = () => {
           onChange={handleChange}
           value={details.address}
         />
-        <button onClick={handleClick}>Add</button>
+        <button className={styles["add"]} onClick={handleClick}>Add</button>
       </form>
     </>
   );

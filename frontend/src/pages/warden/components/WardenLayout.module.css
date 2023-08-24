@@ -1,0 +1,27 @@
+.navbar{
+    min-width: 535px;
+    background: transparent;
+    position :sticky;
+    left: 0;
+    top: 0;
+}
+.navbar .btn{
+    text-decoration: none;
+    color : black;
+    background : rgb(215, 211, 211)
+}
+.navbar .btn:hover{
+    color: white;
+    background : black;
+}
+.navbar button{
+    margin-right: 2px;
+}
+.navbar button:hover{
+    background : black;
+}
+.body{
+    background: url('../../../images/addstudent.jpg');
+    background-size: cover;
+    background-position: center;
+}

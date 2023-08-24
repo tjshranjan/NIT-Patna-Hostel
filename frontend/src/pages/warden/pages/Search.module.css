@@ -1,0 +1,28 @@
+.body{
+    /* backdrop-filter: blur(5px); */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.body h2{
+    text-align: center;
+    font-size: 36px;
+}
+.body .input-button{
+    min-width: 300px ;
+    margin-left: 60%;
+    position: relative;
+}
+.body input{
+    border-radius: 5px;
+    width: 70px;
+}
+.body button{
+    margin: 0 7px;
+    padding: 0 5px;
+    border: 1px solid;
+    border-radius: 8px;
+}
+.body .find:hover{
+    text-decoration : underline
+}

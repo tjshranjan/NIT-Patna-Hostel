@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./AddNotice.css";
+// import "./AddNotice.css";
 import AddIcon from "@mui/icons-material/Add";
 const AddNotice = () => {
   const [text, setText] = useState("");

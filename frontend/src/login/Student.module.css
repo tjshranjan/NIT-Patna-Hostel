@@ -1,0 +1,55 @@
+.page {
+  background: url('../images/loginstudentbg.jpg');
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+}
+.box {
+  background: transparent;
+  padding: 30px 40px;
+  border: none;
+  outline: none;
+  border: 2px solid;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0,0,0,.1);
+  backdrop-filter: blur(5px);
+}
+.box h1 {
+  text-align: center;
+  font-size: 36px;
+  color: grey;
+}
+.box input {
+  width: 100%;
+  height: 30px;
+  background: transparent;
+  padding: 20px;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  border-radius: 40px;
+  font-size: 16px;
+}
+.box input::placeholder {
+  color: rgba(1, 1, 1, 0.404)
+}
+.box button{
+    width: 100%;
+    height: 25px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 1px solid;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: black;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.box button:hover{
+    background-color: rgb(126, 197, 142)
+}

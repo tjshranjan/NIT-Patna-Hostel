@@ -6,12 +6,12 @@ import "react-phone-input-2/lib/style.css";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { auth } from "../firebase.config";
 import { useNavigate } from "react-router-dom";
-
+import styles from './Student.module.css'
 const Student = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [clicked, setClicked] = useState(false);
-  const [sendClicked,setSendClicked]= useState(false)
-  const [verifyClicked,setVerifyClicked] = useState(false)
+  const [sendClicked, setSendClicked] = useState(false);
+  const [verifyClicked, setVerifyClicked] = useState(false);
 
   const [roll, setRoll] = useState("");
   const [otp, setOtp] = useState();
@@ -19,31 +19,30 @@ const Student = () => {
   const [Loading, setLoading] = useState(false);
   const [showOTP, setShowOTP] = useState(false);
   const [user, setUser] = useState(false);
-  useEffect(()=>{
-    if(localStorage.getItem('studentLogin')) navigate(roll)
-  },[])
+  useEffect(() => {
+    if (localStorage.getItem("studentLogin")) navigate(roll);
+  }, []);
 
-  useEffect(()=>{
-    if(user){
-      localStorage.setItem('studentLogin',JSON.stringify(1))
-      navigate(roll)
-    } 
-  },[user])
+  useEffect(() => {
+    if (user) {
+      localStorage.setItem("studentLogin", JSON.stringify(1));
+      navigate(roll);
+    }
+  }, [user]);
   /* TRIAL */
-  const handleTemp = e => {
-    navigate(roll)
-  }
+  const handleTemp = (e) => {
+    navigate(roll);
+  };
 
   const getPhone = async (e) => {
     try {
-      const res = await axios.post("http://localhost:5000/student",{roll});
+      const res = await axios.post("http://localhost:5000/student", { roll });
       if (res.data) {
         setPh(res.data);
-        setClicked(!clicked)
-      }
-      else{
-        setRoll('')
-        alert("Enrollment not found")
+        setClicked(!clicked);
+      } else {
+        setRoll("");
+        alert("Enrollment not found");
       }
     } catch (error) {
       console.log(error);
@@ -72,7 +71,7 @@ const Student = () => {
     const formatPh = "+" + ph;
     signInWithPhoneNumber(auth, formatPh, appVerifier)
       .then((confirmationResult) => {
-        setSendClicked(!sendClicked)
+        setSendClicked(!sendClicked);
         window.confirmationResult = confirmationResult;
         setLoading(false);
         setShowOTP(true);
@@ -83,7 +82,7 @@ const Student = () => {
       });
   }
   function onOTPVerify() {
-    setVerifyClicked(!verifyClicked)
+    setVerifyClicked(!verifyClicked);
     setLoading(true);
     window.confirmationResult
       .confirm(otp)
@@ -116,18 +115,24 @@ const Student = () => {
     );
   }
   return (
-    <div>
-      <h4>Student Signup</h4>
-      <input
-        type="text"
-        placeholder="roll"
-        value={roll}
-        onChange={(e) => {setRoll(e.target.value)}}
-      />
-      <button 
-      // onClick={getPhone}
-      onClick={handleTemp}
-      >CONFIRM</button>
+    <div className={styles.page}>
+      <div className={styles.box}>
+        <h1>Student Login</h1>
+        <input
+          type="text"
+          placeholder="roll"
+          value={roll}
+          onChange={(e) => {
+            setRoll(e.target.value);
+          }}
+        />
+        <button
+          // onClick={getPhone}
+          onClick={handleTemp}
+        >
+          CONFIRM
+        </button>
+      </div>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import styles from './Card.module.css'
 
 const Card = ({ data }) => {
   const navigate = useNavigate();
@@ -53,7 +54,7 @@ const Card = ({ data }) => {
   };
   if (clicked) {
     return (
-      <div>
+      <div className={styles.data}>
         <h2>Updation for {data.roll}</h2>
         <input
           type="text"
@@ -61,7 +62,7 @@ const Card = ({ data }) => {
           placeholder="enroll_id"
           name="enroll_id"
           onChange={handleChange}
-          value={data.enroll_id}
+          defaultValue={data.enroll_id}
         />
         <input
           type="text"
@@ -69,7 +70,7 @@ const Card = ({ data }) => {
           placeholder="name"
           name="name"
           onChange={handleChange}
-          value={data.name}
+          defaultValue={data.name}
         />
         <input
           type="email"
@@ -77,7 +78,7 @@ const Card = ({ data }) => {
           placeholder="email"
           name="email"
           onChange={handleChange}
-          value={data.email}
+          defaultValue={data.email}
         />
         <input
           type="text"
@@ -85,7 +86,7 @@ const Card = ({ data }) => {
           placeholder="roll"
           name="roll"
           onChange={handleChange}
-          value={data.roll}
+          defaultValue={data.roll}
         />
         <input
           type="text"
@@ -93,7 +94,7 @@ const Card = ({ data }) => {
           placeholder="branch"
           name="branch"
           onChange={handleChange}
-          value={data.branch}
+          defaultValue={data.branch}
         />
         <input
           type="text"
@@ -101,7 +102,7 @@ const Card = ({ data }) => {
           placeholder="year"
           name="year"
           onChange={handleChange}
-          value={data.year}
+          defaultValue={data.year}
         />
         <input
           type="text"
@@ -109,7 +110,7 @@ const Card = ({ data }) => {
           placeholder="room no"
           name="room"
           onChange={handleChange}
-          value={data.room}
+          defaultValue={data.room}
         />
         <input
           type="text"
@@ -117,7 +118,7 @@ const Card = ({ data }) => {
           placeholder="phone no"
           name="phone"
           onChange={handleChange}
-          value={data.phone}
+          defaultValue={data.phone}
         />
         <input
           type="text"
@@ -125,14 +126,14 @@ const Card = ({ data }) => {
           placeholder="address"
           name="address"
           onChange={handleChange}
-          value={data.address}
+          defaultValue={data.address}
         />
-        <button onClick={handleUpdate}>UPDATE</button>
+        <button className={styles['btn']} onClick={handleUpdate}>UPDATE</button>
       </div>
     );
   }
   return (
-    <div>
+    <div className={styles.data}>
       <p>{`Name = ${data.name}`}</p>
       <p>{`Enroll No = ${data.enroll_id}`}</p>
       <p>{`Phone No = ${data.phone}`}</p>
@@ -142,8 +143,8 @@ const Card = ({ data }) => {
       <p>{`Year = ${data.year}`}</p>
       <p>{`Room No = ${data.room}`}</p>
       <p>{`Address = ${data.address}`}</p>
-      <button onClick={handleRemove}>Remove Student</button>
-      <button onClick={handleEdit}>Edit Details</button>
+      <button className={styles['btn']} onClick={handleRemove}>Remove Student</button>
+      <button className={styles['btn']} onClick={handleEdit}>Edit Details</button>
     </div>
   );
 };
