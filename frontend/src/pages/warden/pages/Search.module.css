@@ -14,8 +14,9 @@
     position: relative;
 }
 .body input{
+    border: 1px solid;
     border-radius: 5px;
-    width: 70px;
+    width: 72px;
 }
 .body button{
     margin: 0 7px;

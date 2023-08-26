@@ -1,5 +1,4 @@
 import axios from "axios";
-import styles from "./StudentHome.module.css";
 import React, { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PersonalProfile from "./PersonalProfile";
@@ -17,7 +16,7 @@ const StudentHome = () => {
     } catch (e) {
       console.log(e);
     }
-  }, []);
+  }, [id]);
 
   useEffect(() => {
     helper();

@@ -7,35 +7,35 @@ const WardenLayout = () => {
       <div className={styles.navbar}>
         <button>
           <NavLink className={styles["btn"]} to={``}>
-            HOME
+            Home
           </NavLink>
         </button>
 
         <button>
           <NavLink className={styles["btn"]} to={`addstudent`}>
-            ADD STUDENT
+            Add Student
           </NavLink>
         </button>
 
         <button>
           <NavLink className={styles["btn"]} to={`search`}>
-            SEARCH STUDENT
+            Search Student
           </NavLink>
         </button>
 
         <button>
           <NavLink className={styles["btn"]} to={`complainList`}>
-            COMPLAINS
+            Complains
           </NavLink>
         </button>
         <button>
           <NavLink className={styles["btn"]} to={`applicationList`}>
-            APPLICATIONS
+            Applications
           </NavLink>
         </button>
         <button>
           <NavLink className={styles["btn"]} to={`addnotice`}>
-            ADD NOTICE
+            Add Notice
           </NavLink>
         </button>
       </div>

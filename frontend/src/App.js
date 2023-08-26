@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { lazy, useState ,Suspense } from "react";
+import './App.css'
 import {
   Route,
   RouterProvider,
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import Login from "./pages/Login";
+// import Login from "./pages/Login";
 import Warden from "./login/Warden";
 import MessIncharge from "./login/MessIncharge";
 import Student from "./login/Student";
@@ -28,12 +29,14 @@ import Application from "./pages/student/pages/Application";
 import ApplicationList from "./pages/warden/pages/ApplicationList";
 import Notices from "./pages/student/components/Notices";
 import AddNotice from "./pages/warden/pages/AddNotice";
+//Lazy Loading ...
+const Login = lazy(() => import("./pages/Login"))
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
       <Route path="/">
-        <Route index element={<Login />} />
+        <Route index element={<Suspense fallback={<h1>Loading...</h1>}><Login /></Suspense>} />
         <Route path="warden">
           <Route index element={<Warden />} />
           <Route path="home" element={<WardenLayout />}>
@@ -45,7 +48,6 @@ const router = createBrowserRouter(
             <Route path="addnotice" element={<AddNotice />} />
           </Route>
         </Route>
-        <Route path="messIncharge" element={<MessIncharge />} />
         <Route path="student">
           <Route index element={<Student />} />
           <Route path=":id" element={<StudentLayout />}>
@@ -56,6 +58,7 @@ const router = createBrowserRouter(
           </Route>
         </Route>
       </Route>
+      <Route path="messIncharge" element={<MessIncharge />} />
       <Route path="*" element={<PageNotFound />} />
     </Route>
   )

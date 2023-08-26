@@ -1,6 +1,6 @@
 .navbar{
     min-width: 535px;
-    background: transparent;
+    backdrop-filter: blur(500px);
     position :sticky;
     left: 0;
     top: 0;
@@ -8,14 +8,17 @@
 .navbar .btn{
     text-decoration: none;
     color : black;
-    background : rgb(215, 211, 211)
+    background : rgb(231, 224, 224);
+    border-radius: 3px;
+    border: 1px solid;
+    padding: 0 3px;
 }
 .navbar .btn:hover{
     color: white;
     background : black;
 }
 .navbar button{
-    margin-right: 2px;
+    /* margin-right: 2px; */
 }
 .navbar button:hover{
     background : black;

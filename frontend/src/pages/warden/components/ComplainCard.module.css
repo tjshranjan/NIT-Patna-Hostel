@@ -1,0 +1,31 @@
+.card{
+    position: relative;
+    margin: 2px 5%;
+    padding: 10px;
+    width: 40%;
+    float: left;
+    border: 2px solid;
+    border-radius: 4px;
+}
+.card h6{
+    font-size: 20px;
+    text-decoration: underline;
+}
+.card button{
+    position :relative;
+    background: rgb(255, 255, 255);
+    margin: 10px 0 0 0;
+    padding: 5px;
+    border-radius: 10px;
+    /* border:  1px solid; */
+}
+.card button:hover{
+    cursor: pointer;
+    /* background: rgb(193, 196, 192); */
+}
+.one{
+    background: rgb(174, 213, 137);
+}
+.two{
+    background: rgba(242, 9, 9, 0.86);
+}

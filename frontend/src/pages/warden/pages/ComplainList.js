@@ -22,7 +22,7 @@ const ComplainList = () => {
   return (
     <>
       {complains.map((complain, index) => (
-        <ComplainCard key={index} roll={complain.roll} msg={complain.msg} />
+        <ComplainCard key={index} {...complain} />
       ))}
     </>
   );
