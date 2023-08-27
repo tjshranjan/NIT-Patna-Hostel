@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { WARDEN_PASSWORD, WARDEN_USERNAME } from "../config";
 import styles from './Warden.module.css'
@@ -22,10 +22,16 @@ const Warden = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(process.env);
-    if (data.Username === WARDEN_USERNAME && data.Password === WARDEN_PASSWORD)
+    if (data.Username === WARDEN_USERNAME && data.Password === WARDEN_PASSWORD){
+      localStorage.setItem('warden_logged_in','1')
       navigate("home");
+    }
+      
     else navigate("/");
   };
+  useEffect(()=>{
+    if(localStorage.getItem('warden_logged_in')) navigate('home')
+  },[])
   return (
     <div className={styles.body}>
     <div className={styles.wrapper}>

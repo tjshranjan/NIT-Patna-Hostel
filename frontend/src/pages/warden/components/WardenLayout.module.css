@@ -1,5 +1,5 @@
 .navbar{
-    min-width: 535px;
+    min-width: 1025px;
     backdrop-filter: blur(500px);
     position :sticky;
     left: 0;
@@ -24,7 +24,15 @@
     background : black;
 }
 .body{
+    position: relative;
     background: url('../../../images/addstudent.jpg');
     background-size: cover;
     background-position: center;
+}
+.navbar .logout{
+    position: absolute;
+    right: 5px;
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 0 3px;
 }

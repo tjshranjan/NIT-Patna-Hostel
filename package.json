@@ -1,0 +1,26 @@
+{
+  "name": "hostel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "frontend" : "cd frontend && npm start",
+    "backend" : "cd backend && npm start",
+    "dev" : "concurrently \"npm run frontend\" \"npm run backend\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tjshranjan/NIT-Patna-Hostel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tjshranjan/NIT-Patna-Hostel/issues"
+  },
+  "homepage": "https://github.com/tjshranjan/NIT-Patna-Hostel#readme",
+  "dependencies": {
+    "concurrently": "^8.2.1"
+  }
+}

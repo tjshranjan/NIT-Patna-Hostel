@@ -1,10 +1,10 @@
-import React, { lazy, useState ,Suspense } from "react";
+import React, { lazy,Suspense } from "react";
 import './App.css'
 import {
   Route,
   RouterProvider,
   createBrowserRouter,
-  createRoutesFromElements,
+  createRoutesFromElements
 } from "react-router-dom";
 // import Login from "./pages/Login";
 import Warden from "./login/Warden";
@@ -29,13 +29,14 @@ import Application from "./pages/student/pages/Application";
 import ApplicationList from "./pages/warden/pages/ApplicationList";
 import Notices from "./pages/student/components/Notices";
 import AddNotice from "./pages/warden/pages/AddNotice";
+import RootLayout from "./layout/RootLayout";
 //Lazy Loading ...
 const Login = lazy(() => import("./pages/Login"))
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
-      <Route path="/">
+      <Route path="/" element={<RootLayout />}>
         <Route index element={<Suspense fallback={<h1>Loading...</h1>}><Login /></Suspense>} />
         <Route path="warden">
           <Route index element={<Warden />} />
